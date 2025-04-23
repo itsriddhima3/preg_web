@@ -1,8 +1,20 @@
 import { useState } from "react";
+import axios from "axios";
 import { VscArrowUp } from "react-icons/vsc";
 
 export default function ChatInput() {
   const [message, setMessage] = useState("");
+
+  const handleSend = async()=>{
+    try{
+      const res = await axios.post("http://localhost:5000/api/grok",{
+        message
+      })
+      console.log("res",res);
+    }catch(err){
+      console.log(err);
+    }
+  }
 
   return (
     <div className="w-full p-2  bg-transparent  rounded-full bg-white shadow-xl">
@@ -15,9 +27,7 @@ export default function ChatInput() {
           className="flex-grow resize-none border-none bg-transparent focus:outline-none p-2 text-base message-input"
          />
         <button
-          onClick={() => {
-           setMessage();
-          }}
+          onClick={handleSend}
           className="ml-2 bg-black text-white px-4 py-4 rounded-full hover:bg-gray-800 transition"
         ><VscArrowUp />
         </button>

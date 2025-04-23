@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import UsersModel from './models/users.js';  
+import axios from 'axios';
 
 const app = express();
 app.use(express.json());
@@ -52,8 +53,34 @@ app.post('Login',(req,res)=>{
     }
   })
 })
+
+app.post('/api/grok', async (req, res) => {
+  const { message } = req.body
+  // console.log(message,"abc");
+  try {
+    const messages = [
+      { role: "user", content: message }
+    ];
+    const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+      model: "llama-3.3-70b-versatile",
+      messages: messages,
+    }, {
+      headers: {
+        'Authorization' : `Bearer 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`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    // console.log("response",response.data.choices[0].message.content);
+    res.json({
+      res : response.data.choices[0].message.content
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Error processing request with AI' });
+  }
+});
 // Start Server
-app.listen(3001, () => {
+app.listen(5000, () => {
     console.log('Server is running on port 5000');
   });
   
