@@ -5,7 +5,7 @@ export default function ChatInput() {
   const [message, setMessage] = useState("");
 
   return (
-    <div className="w-full p-2  bg-transparent rounded-full bg-white shadow-xl">
+    <div className="w-full p-2  bg-transparent  rounded-full bg-white shadow-xl">
       <div className="flex items-end rounded-full  px-3 py-2 bg-white">
         <input
           type="text"
@@ -25,3 +25,4 @@ export default function ChatInput() {
     </div>
   );
 }
+
