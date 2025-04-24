@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Home from '../Home/Home';
 
 
 
@@ -11,19 +12,25 @@ import { useNavigate } from 'react-router-dom';
    const[email ,setemail]=useState('')
    const[password ,setpassword]=useState('')
    const navigate = useNavigate();
+   const [errorMessage, setErrorMessage] = useState('');
+
 
    const handlesubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/Login',{email,password})
+    axios.post('http://localhost:3001/login',{email,password})
     .then(result => {console.log(result)
         if(result.data === "success"){
+          setErrorMessage('');
             navigate('/Home');
         }
+        else {
+            setErrorMessage('Account does not exist. Please register.');
+
+          }
     })
-    .catch(error =>console.log(error))
-
-
-     }
+    .catch(error =>{console.log(error);
+    setErrorMessage('Something went wrong. Try again.');});
+     };
     return(
         <div className='text-white bg-[#a094a6] sm:items-center sm:pt-0 relative flex items-top justify-center min-h-[700px] '> 
           <div className='bg-black rounded-md p-6'>
@@ -56,6 +63,10 @@ import { useNavigate } from 'react-router-dom';
                 <button type='submit' className='md:w-70 bg-white text-black font-bold py-3 px-6 rounded-lg mt-2 ml-6 hover:bg-gray-900 transition ease-in-out duration-300 hover:text-white '>Login</button>
 
             </form>
+            {errorMessage && (
+              <p className='text-red-500 text-center mt-4'>{errorMessage}</p>
+            )}
+            
                 
           </div>
         </div>

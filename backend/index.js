@@ -1,9 +1,9 @@
-
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import UsersModel from './models/users.js';  
 import axios from 'axios';
+
 
 const app = express();
 app.use(express.json());
@@ -37,7 +37,7 @@ app.post('/register', (req, res) => {
     .catch(err => res.json({ err }));
 });
 
-app.post('Login',(req,res)=>{
+app.post('/login',(req,res)=>{
   const{email,password} =req.body;
   UsersModel.findOne({ email :email })
   .then(user=>{
@@ -51,12 +51,11 @@ app.post('Login',(req,res)=>{
     else{
       res.json("user not found")
     }
-  })
-})
+  }).catch(err => res.json({ err }));
+});
 
 app.post('/api/grok', async (req, res) => {
-  const { message } = req.body
-  // console.log(message,"abc");
+  const { message } = req.body;
   try {
     const messages = [
       { role: "user", content: message }
@@ -66,21 +65,24 @@ app.post('/api/grok', async (req, res) => {
       messages: messages,
     }, {
       headers: {
-        'Authorization' : `Bearer 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`,
+        'Authorization': `Bearer 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`,
         'Content-Type': 'application/json'
       }
     });
-
-    // console.log("response",response.data.choices[0].message.content);
+    console.log("AI Response:", response.data); 
+    // Send the response back to the frontend with 'reply' field
     res.json({
-      res : response.data.choices[0].message.content
+      reply: response.data.choices[0].message.content || "No response from AI."
     });
   } catch (error) {
     res.status(500).json({ error: 'Error processing request with AI' });
   }
 });
 // Start Server
-app.listen(5000, () => {
-    console.log('Server is running on port 5000');
+app.listen(3001, () => {
+    console.log('Server is running on port 3001');
   });
+
+  // res.json({ reply: "Your processed message here" });
+
   

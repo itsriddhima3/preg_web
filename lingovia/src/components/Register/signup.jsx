@@ -26,7 +26,7 @@ import { useNavigate } from 'react-router-dom';
             <h3 className='text-3xl sm:text-4xl text-white font-extrabold tracking-tight text-center m-4'>Register</h3>
             <form onSubmit={handlesubmit}>
             <div>
-                    <label   className='text-xl'   htmlFor='Email'>
+                    <label className='text-xl'   htmlFor='Email'>
                         <strong>Name</strong>
                     </label>
                     <input
@@ -66,8 +66,14 @@ import { useNavigate } from 'react-router-dom';
             </form>
                 <p className='text-white text-center'>Already have an Account</p>
 
-                <Link to="/Login" 
-                className='md:w-70 bg-white text-black font-bold py-3 px-6 rounded-lg  hover:bg-gray-900 transition  duration-300 hover:text-white '>Login</Link>
+                <div className="flex justify-center mt-4">
+                 <Link
+                    to="/Login"
+                    className="w-full bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-gray-900  hover:text-white transition duration-300 text-center"
+                  >
+                    Login
+                  </Link>
+                </div>
           </div>
         </div>
     );
