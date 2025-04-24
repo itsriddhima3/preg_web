@@ -8,7 +8,7 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="C:\Users\Lenovo\react\lingovia\src\assets\major_design_tutorial_2x__1_-removebg-preview.png"
+                            src="./logo.png"
                             className="mr-3  mx-2 h-12"
                             alt="Logo"
                         />
