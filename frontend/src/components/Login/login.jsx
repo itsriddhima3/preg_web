@@ -21,7 +21,7 @@ import Home from '../Home/Home';
     .then(result => {console.log(result)
         if(result.data === "success"){
           setErrorMessage('');
-            navigate('/Home');
+            navigate('/dashboard');
         }
         else {
             setErrorMessage('Account does not exist. Please register.');

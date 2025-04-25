@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="C:\Users\Lenovo\react\lingovia\src\assets\major_design_tutorial_2x__1_-removebg-preview.png"
+                                src="./pregglogo.jpg"
                                 className="mr-3 h-16"
                                 alt="Logo"
                             />
