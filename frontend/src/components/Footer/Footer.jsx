@@ -3,13 +3,13 @@ import { Link } from 'react-router'
 
 export default function Footer() {
     return (
-        <footer className="bg-black border-y">
+        <footer className="bg-black border-y border-t border-gray-900">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="./pregglogo.jpg"
+                                src="./pregglogo.png"
                                 className="mr-3 h-16"
                                 alt="Logo"
                             />

@@ -22,12 +22,12 @@ export default function ChatInput() {
 
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-165 bg-[#a094a6] ">
-      <div className="w-370 max-w-500 bg-[#a094a6] p-4 overflow-auto h-[400px] max-h-[700px] hide-scrollbar transition-all duration-300 ease-in-out ">
+    <div className="flex flex-col justify-center items-center w-full h-165 bg-black ">
+      <div className="w-370 max-w-500 bg-black p-4 overflow-auto h-[400px] max-h-[700px] hide-scrollbar transition-all duration-300 ease-in-out">
         {response ? (
-          <p className="text-white bg-black whitespace-pre-wrap pl-6 pt-6 pr-6 pb-6">  AI : {response} </p>
+          <p className="text-white text-xl bg-black whitespace-pre-wrap pl-6 pt-6 pr-6 pb-6">  {response} </p>
         ) : (
-          <p className="text-black text-lg bg-[#a094a6] text-center ">Welcome....</p>
+          <p className="text-white text-xl bg-black text-shadow-lg text-shadow-gray-600  text-center ">Welcome....</p>
         )}
       </div>
       <div className=" rounded-full relative top-10 px-3 py-2 bg-white w-100   ">

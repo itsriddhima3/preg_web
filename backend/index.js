@@ -65,7 +65,7 @@ app.post('/api/grok', async (req, res) => {
       messages: messages,
     }, {
       headers: {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer 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`,
         'Content-Type': 'application/json'
       }
     });

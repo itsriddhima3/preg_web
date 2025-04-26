@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { CgProfile } from "react-icons/cg";
 
 
  export default function Signup(){
@@ -22,9 +23,10 @@ import { useNavigate } from 'react-router-dom';
     }
     return(
         <div className='text-white bg-[#a094a6] sm:items-center sm:pt-0 relative flex items-top justify-center min-h-[700px] '> 
-          <div className='bg-black rounded-md p-6'>
+          <div className='bg-black rounded-md p-6 flex flex-row gap-4'>
+            <form onSubmit={handlesubmit}
+             className='border-r-1 border-white pr-6'>
             <h3 className='text-3xl sm:text-4xl text-white font-extrabold tracking-tight text-center m-4'>Register</h3>
-            <form onSubmit={handlesubmit}>
             <div>
                     <label className='text-xl'   htmlFor='Email'>
                         <strong>Name</strong>
@@ -62,17 +64,18 @@ import { useNavigate } from 'react-router-dom';
                       onChange={(e)=>setpassword(e.target.value)}/>
                 </div>
                 <button type='submit' className='md:w-70 bg-white text-black font-bold py-3 px-6 rounded-lg mt-2 ml-6 hover:bg-gray-900 transition ease-in-out duration-300 hover:text-white '>Register</button>
-
             </form>
-                <p className='text-white text-center'>Already have an Account</p>
-
+            <div className='flex flex-col justify-center'>
+               <div className=' text-white text-6xl flex justify-center'> <CgProfile /></div>
+                <p className='text-white text-center'>Already have an Account ?</p>
                 <div className="flex justify-center mt-4">
                  <Link
                     to="/Login"
-                    className="w-full bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-gray-900  hover:text-white transition duration-300 text-center"
+                    className="md:w-70 bg-white text-black font-bold py-3 px-6 rounded-lg hover:bg-gray-900 hover:text-white transition duration-300 text-center ml-6 "
                   >
                     Login
                   </Link>
+                </div>
                 </div>
           </div>
         </div>
