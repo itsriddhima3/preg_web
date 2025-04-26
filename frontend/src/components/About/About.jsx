@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-      <div className="py-21 bg-[url(./pregnant.jpg)] bg-no-repeat bg-cover h-dvh">
+      <div className="py-21 bg-[url(/pregnant.jpg)] bg-no-repeat bg-cover h-dvh">
           <div className="container m-auto px-6 text-black md:px-12 xl:px-6">
               <div className="text-left  " >
                   <div className="md:7/12 lg:w-1/2 ">
