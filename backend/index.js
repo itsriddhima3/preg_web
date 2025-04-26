@@ -3,11 +3,15 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import UsersModel from './models/users.js';  
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 
 const app = express();
 app.use(express.json());
-const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174'];
+const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -23,10 +27,11 @@ app.use(cors({
 
 
 // MongoDB Connection
-mongoose.connect("mongodb://localhost:27017/users", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error", err));
   
@@ -56,6 +61,19 @@ app.post('/login',(req,res)=>{
 
 app.post('/api/grok', async (req, res) => {
   const { message } = req.body;
+
+  const allowedKeywords = [
+    'pregnancy', 'delivery', 'baby', 'women', 'woman', 'mother', 'labour', 'labor', 'childbirth', 'period', 'fertility', 'menstruation', 'postpartum', 'breastfeeding' ,'ovulation','hi','hello'
+  ];
+
+  const lowerMessage = message.toLowerCase();
+
+  const isRelated = allowedKeywords.some(keyword => lowerMessage.includes(keyword));
+
+  if (!isRelated) {
+    return res.json({ reply: "Topic not related to women's health, pregnancy, or delivery." });
+  }
+
   try {
     const messages = [
       { role: "user", content: message }
@@ -65,12 +83,12 @@ app.post('/api/grok', async (req, res) => {
       messages: messages,
     }, {
       headers: {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
         'Content-Type': 'application/json'
       }
     });
-    console.log("AI Response:", response.data); 
-    // Send the response back to the frontend with 'reply' field
+
+    console.log("AI Response:", response.data);
     res.json({
       reply: response.data.choices[0].message.content || "No response from AI."
     });
@@ -78,11 +96,10 @@ app.post('/api/grok', async (req, res) => {
     res.status(500).json({ error: 'Error processing request with AI' });
   }
 });
-// Start Server
-app.listen(3001, () => {
-    console.log('Server is running on port 3001');
-  });
 
-  // res.json({ reply: "Your processed message here" });
+const PORT = process.env.PORT || 3001;
 
-  
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+

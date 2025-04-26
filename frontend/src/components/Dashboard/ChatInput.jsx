@@ -8,6 +8,17 @@ export default function ChatInput() {
 
   const handleSend = async () => {
     if (!message.trim()) return; 
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (!isLoggedIn) {
+      setResponse("⚠️ You must be logged in to ask questions.");
+      setMessage("");
+      setTimeout(() => {
+        navigate('/login'); 
+      }, 2000);
+      return;
+    }
     try {
       const res = await axios.post("http://localhost:3001/api/grok", {
         message,

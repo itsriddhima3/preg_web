@@ -1,8 +1,18 @@
 import React from 'react'
 import { Link , NavLink} from 'react-router'
 import { CgProfile } from "react-icons/cg";
+import { TbLogout } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Header() {
+     
+    
+    const handleLogout = () => {
+        localStorage.removeItem('isLoggedIn');
+        navigate('/login'); 
+    };
+
     return (
         <header className=" sticky z-50 top-0">
             <nav className="bg-black text-lg px-4 lg:px-6 py-2.5 text-white">
@@ -15,14 +25,18 @@ export default function Header() {
                         />
                     </Link>
                     <div className="flex items-center lg:order-2">
-                       
                         <Link
                             to="/register"
                             className="text-white bg-black hover:text-black  hover:bg-[#a094a6]  rounded-full text-2xl px-4 lg:px-2 py-2 lg:py-2.5 mr-2 focus:outline-none"
                         >
                           <CgProfile />
                         </Link>
-                    </div>
+                        <button                           
+                             onClick={handleLogout}
+                             className="bg-black text-white font-bold py-2 px-4 rounded-full  hover:bg-[#a094a6] hover:text-black  transition ease-in-out  duration-300  text-2xl"  >
+                           <TbLogout />
+                        </button>
+                     </div>
                     <div
                         className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1 "
                         id="mobile-menu-2"

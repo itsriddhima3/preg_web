@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -14,18 +14,23 @@ import Home from '../Home/Home';
    const navigate = useNavigate();
    const [errorMessage, setErrorMessage] = useState('');
 
-
+   useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      navigate('/home');
+    }
+  }, []);
    const handlesubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:3001/login',{email,password})
-    .then(result => {console.log(result)
+    .then(result => {
         if(result.data === "success"){
           setErrorMessage('');
-            navigate('/dashboard');
+          localStorage.setItem('isLoggedIn', 'true'); 
+          navigate('/home');
         }
         else {
             setErrorMessage('Account does not exist. Please register.');
-
           }
     })
     .catch(error =>{console.log(error);
@@ -53,9 +58,9 @@ import Home from '../Home/Home';
                         <strong>Password</strong>
                     </label>
                     <input
-                    type='password'
-                    placeholder='Enter Password'
-                     name='password'
+                      type='password'
+                      placeholder='Enter Password'
+                      name='password'
                       autoComplete='off'
                       className='text-black bg-white border-2 border-gray-300 rounded-md p-2 ml-6 mb-6'
                       onChange={(e)=>setpassword(e.target.value)}/>
