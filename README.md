@@ -17,9 +17,9 @@ Preg_Web is an AI-powered web platform created to support, guide, and empower pr
 
 📁 Project Structure
 preg_web/
-├── backend/         # API and server code
-├── frontend/        # Vite + Tailwind frontend
-├── package.json     # Project configuration
+├── backend/         
+├── frontend/       
+├── package.json    
 └── README.md
 
 
