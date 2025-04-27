@@ -24,7 +24,7 @@ import Home from '../Home/Home';
    const handlesubmit = (e) => {
     e.preventDefault()
     console.log(`${backendUrl}/login`)
-    axios.post(`${backendUrl}/login`,{email,password})
+    axios.post(`/login`,{email,password})
     .then(result => {
         if(result.data === "success"){
           setErrorMessage('');
