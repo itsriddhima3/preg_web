@@ -12,8 +12,8 @@ import { CgProfile } from "react-icons/cg";
    const[email ,setemail]=useState('')
    const[password ,setpassword]=useState('')
    const navigate = useNavigate();
-  // const backendUrl = process.env.REACT_APP_API_URL;
-  const backendUrl = "https://preg-web.onrender.com"
+  const backendUrl = process.env.REACT_APP_API_URL;
+  // const backendUrl = "https://preg-web.onrender.com"
 
    const handlesubmit = (e) => {
     e.preventDefault()
