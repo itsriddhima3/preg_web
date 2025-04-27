@@ -12,12 +12,12 @@ import { CgProfile } from "react-icons/cg";
    const[email ,setemail]=useState('')
    const[password ,setpassword]=useState('')
    const navigate = useNavigate();
-  const backendUrl = process.env.REACT_APP_API_URL;
+  // const backendUrl = process.env.REACT_APP_API_URL;
 
    const handlesubmit = (e) => {
     e.preventDefault()
     console.log("backend:",backendUrl)
-    axios.post(`${backendUrl}/register`, { name, email, password })
+    axios.post(`https://preg-web.onrender.com/register`, { name, email, password })
     .then(result => {console.log(result)
       navigate('/Login');
     })
