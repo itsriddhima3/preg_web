@@ -19,6 +19,7 @@ and curated resources — anytime, anywhere.
 📁 Project Structure
 
 preg_web/
+
 ├── backend/         
 ├── frontend/       
 ├── package.json    
