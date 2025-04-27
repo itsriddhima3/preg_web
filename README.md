@@ -3,6 +3,8 @@
 
 
 
+
+
 ---
 
 ## ✨ About
@@ -44,7 +46,6 @@ preg_web/
 - Built with ❤️ for empowering women
 - Fast, lightweight, and secure
 - Real-world problem-solving approach
-- Ideal for hackathons and impact-driven innovation
 
 ---
 
