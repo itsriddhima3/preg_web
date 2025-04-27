@@ -16,6 +16,7 @@ import { CgProfile } from "react-icons/cg";
 
    const handlesubmit = (e) => {
     e.preventDefault()
+    console.log("backend:",backendUrl)
     axios.post(`${backendUrl}/register`, { name, email, password })
     .then(result => {console.log(result)
       navigate('/Login');
