@@ -7,13 +7,17 @@ and curated resources — anytime, anywhere.
 🚀 Tech Stack
 
 ⚡ Frontend: Vite, Tailwind CSS
+
 🔥 Backend: Node.js, Express.js
+
 🛢️ Database: MongoDB
 
 📋 Key Features
 
 🤰 Personalized pregnancy tips
+
 💬 AI chatbot for emotional and health support
+
 🔒 Safe and private user experience
 
 
