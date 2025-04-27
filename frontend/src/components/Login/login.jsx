@@ -13,7 +13,8 @@ import Home from '../Home/Home';
    const[password ,setpassword]=useState('')
    const navigate = useNavigate();
    const [errorMessage, setErrorMessage] = useState('');
-   const backendUrl = process.env.REACT_APP_API_URL
+   // const backendUrl = process.env.REACT_APP_API_URL
+  const backendUrl = "https://preg-web.onrender.com"
   
    useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
