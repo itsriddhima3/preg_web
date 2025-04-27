@@ -5,7 +5,8 @@ import { VscArrowUp } from "react-icons/vsc";
 export default function ChatInput() {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState("");
-   const backendUrl = process.env.REACT_APP_API_URL;
+   // const backendUrl = process.env.REACT_APP_API_URL;
+  const backendUrl = "https://preg-web.onrender.com"
 
 
   const handleSend = async () => {
