@@ -1,53 +1,40 @@
-# 🌸 Preg\_Web — AI Companion for Moms-to-Be
+# 🚀 Preg_Web
 
-
-
-
-
-
----
-
-## ✨ About
-
-**Preg\_Web** is an AI-powered web platform created to support, guide, and empower pregnant women with personalized advice, emotional support, and curated resources — anytime, anywhere.
+![GitHub repo size](https://img.shields.io/github/repo-size/itsriddhima3/preg_web?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/itsriddhima3/preg_web?style=for-the-badge)
+![GitHub stars](https://img.shields.io/github/stars/itsriddhima3/preg_web?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/itsriddhima3/preg_web?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/itsriddhima3/preg_web?style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/itsriddhima3/preg_web?style=for-the-badge)
 
 ---
 
-## 🚀 Tech Stack
 
-- ⚡ **Frontend:** Vite, Tailwind CSS
-- 🔥 **Backend:** Node.js, Express.js
-- 📂 **Database:** MongoDB
+## 🛠️ Tech Stack
 
----
-
-## 📋 Key Features
-
-- 🧀 Personalized pregnancy tips
-- 💬 AI chatbot for emotional and health support
-- 🔒 Safe and private user experience
+- Vite.js
+- Node.js
+- Express.js
+- MongoDB
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```
+
 preg_web/
-├── backend/         # API and server code
-├── frontend/        # Vite + Tailwind frontend
-├── package.json     # Project configuration
+│
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── templates/
+│   ├── index.html
+│   └── other_pages.html
+│
+├── app.py
 └── README.md
-```
 
----
 
-## 🏆 Why Preg\_Web?
-
-- Built with ❤️ for empowering women
-- Fast, lightweight, and secure
-- Real-world problem-solving approach
-
----
-
-> ✨ *"Preg\_Web — because every mom-to-be deserves the best!"* ✨
 
