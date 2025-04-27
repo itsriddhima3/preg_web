@@ -5,6 +5,8 @@ import { VscArrowUp } from "react-icons/vsc";
 export default function ChatInput() {
   const [message, setMessage] = useState("");
   const [response, setResponse] = useState("");
+   const backendUrl = process.env.REACT_APP_API_URL;
+
 
   const handleSend = async () => {
     if (!message.trim()) return; 
@@ -20,7 +22,7 @@ export default function ChatInput() {
       return;
     }
     try {
-      const res = await axios.post("http://localhost:3001/api/grok", {
+      const res = await axios.post("${backendUrl}/api/grok", {
         message,
       });
       setResponse(res.data.reply || "No response received.");
