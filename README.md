@@ -1,10 +1,10 @@
-🌸 Preg_Web — AI Companion for Moms-to-Be
+#🌸 Preg_Web — AI Companion for Moms-to-Be
 
-✨ About
+##✨ About
 Preg_Web is an AI-powered web platform created to support, guide, and empower pregnant women with personalized advice, emotional support,
 and curated resources — anytime, anywhere.
 
-🚀 Tech Stack
+##🚀 Tech Stack
 
 ⚡ Frontend: Vite, Tailwind CSS
 
@@ -12,7 +12,7 @@ and curated resources — anytime, anywhere.
 
 🛢️ Database: MongoDB
 
-📋 Key Features
+##📋 Key Features
 
 🤰 Personalized pregnancy tips
 
