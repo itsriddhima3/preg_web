@@ -23,7 +23,7 @@ export default function ChatInput() {
       return;
     }
     try {
-      const res = await axios.post("${backendUrl}/api/grok", {
+      const res = await axios.post(`${backendUrl}/api/grok`, {
         message,
       });
       setResponse(res.data.reply || "No response received.");
