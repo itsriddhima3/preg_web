@@ -1,9 +1,31 @@
-Preg_Web
-A simple AI-based web platform that provides support, suggestions, and guidance for pregnant women.
+🌸 Preg_Web — AI Companion for Moms-to-Be
 
-Tech Stack
+✨ About
+Preg_Web is an AI-powered web platform created to support, guide, and empower pregnant women with personalized advice, emotional support, and curated resources — anytime, anywhere.
 
-1. Frontend: Vite + Tailwind CSS
-2. Backend: Node.js + Express.js
-3. Database: MongoDB
+🚀 Tech Stack
+
+⚡ Frontend: Vite, Tailwind CSS
+🔥 Backend: Node.js, Express.js
+🛢️ Database: MongoDB
+
+📋 Key Features
+
+🤰 Personalized pregnancy tips
+💬 AI chatbot for emotional and health support
+🔒 Safe and private user experience
+
+📁 Project Structure
+preg_web/
+├── backend/         # API and server code
+├── frontend/        # Vite + Tailwind frontend
+├── package.json     # Project configuration
+└── README.md
+
+
+
+
+
+
+
 
